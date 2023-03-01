@@ -6,23 +6,38 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="icon" href="../asset/images/favicon.ico" type="image/x-icon" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+
+	<link rel="stylesheet" href="./style/main.css">
 	<title>Đăng Nhập</title>
 </head>
 
 
 <body>
-	<header>
+	<header id="header">
 		<a href="trangchu.html">
 			<img src="../asset/images/logo.png" alt="Logo">
 		</a>
+		<img src="../asset/images/header-img1.png" alt="Header" class="header-img1">
+		<img src="../asset/images/header-img2.png" alt="Header" class="header-img2">
+		<img src="../asset/images/header-img3.png" alt="Header" class="header-img3">
 		<nav>
-			<a href="trangchu.html">Trang chủ</a>
-			<a href="trangchu.html">Giới thiệu</a>
-			<a href="sanpham.html">Sản phẩm</a>
-			<a href="tintuc.html">Tin tức</a>
-			<a href="dangnhap.html">Đăng Nhập</a>
-			<a href="dangky.html">Đăng ký</a>
-			<a href="lienhe.html">Liên Hệ</a>
+			<div class="nav-links">
+				<a class="nav-links__item" href="trangchu.html">Trang chủ</a>
+				<a class="nav-links__item" href="trangchu.html">Giới thiệu</a>
+				<a class="nav-links__item" href="sanpham.html">Sản phẩm</a>
+				<a class="nav-links__item" href="tintuc.html">Tin tức</a>
+				<a class="nav-links__item" href="dangnhap.html">Đăng Nhập</a>
+				<a class="nav-links__item" href="dangky.html">Đăng ký</a>
+				<a class="nav-links__item" href="lienhe.html">Liên Hệ</a>
+			</div>
+			<div class="nav-search">
+				<form class="nav-search__form">
+					<input type="text" placeholder="Search">
+					<button class="button-icon button-icon--white"><i class="bi bi-search"></i></button>
+				</form>
+				<button class="button-icon button-icon--pink"><i class="bi bi-cart-fill"></i></button>
+			</div>
 		</nav>
 	</header>
 	<main>
@@ -30,11 +45,11 @@
 			<legend>
 				<b>Đăng Ký</b>
 			</legend>
-			
+
 			<form method="post" enctype="application/x-www-form-urlencoded">
 				<table style="text-align: left;">
 					<tr>
-						<th ><label for="email" >Email</label></th>
+						<th><label for="email">Email</label></th>
 						<td></td>
 						<td></td>
 						<td></td>
@@ -51,7 +66,7 @@
 						<td></td>
 						<td><input type="password" id="password" placeholder="Vui lòng nhập mật khẩu"></td>
 					</tr>
-                    <tr>
+					<tr>
 						<th><label for="confirm_password">Nhập lại Mật Khẩu</label></th>
 						<td></td>
 						<td></td>
@@ -60,7 +75,7 @@
 						<td></td>
 						<td><input type="password" id="confirm_password" placeholder="Vui lòng nhập lại mật khẩu"></td>
 					</tr>
-                    <tr>
+					<tr>
 						<th><label>Cấp độ thành viên</label></th>
 						<td></td>
 						<td></td>
@@ -68,13 +83,15 @@
 						<td></td>
 						<td></td>
 						<td>
-                            <input type="radio" name="level" id="Bac" value="Bạc"> <label for="Bac"><b>Bạc</b></label>
-                            <input type="radio" name="level" id="Vang" value="Vàng"> <label for="Vang"><b>Vàng</b></label>
-                            <input type="radio" name="level" id="BK" value="Bạch Kim"> <label for="BK"><b>Bạch Kim</b></label>
-                        </td>
+							<input type="radio" name="level" id="Bac" value="Bạc"> <label for="Bac"><b>Bạc</b></label>
+							<input type="radio" name="level" id="Vang" value="Vàng"> <label
+								for="Vang"><b>Vàng</b></label>
+							<input type="radio" name="level" id="BK" value="Bạch Kim"> <label for="BK"><b>Bạch
+									Kim</b></label>
+						</td>
 					</tr>
-                    <tr>
-						<th ><label for="file_avt">Ảnh đại diện</label></th>
+					<tr>
+						<th><label for="file_avt">Ảnh đại diện</label></th>
 						<td></td>
 						<td></td>
 						<td></td>
@@ -82,11 +99,12 @@
 						<td></td>
 						<td><input type="file" id="file_avt"></td>
 					</tr>
-                    <tr>
-                        <td colspan="7"><b>Thông qua việc tạo tài khoản, bạn đồng ý với <a href="#">Điều khoản & Quyền riêng tư của chúng tôi</a></b></td>
-                    </tr>
 					<tr>
-                        <td>
+						<td colspan="7"><b>Thông qua việc tạo tài khoản, bạn đồng ý với <a href="#">Điều khoản & Quyền
+									riêng tư của chúng tôi</a></b></td>
+					</tr>
+					<tr>
+						<td>
 							<button>Hủy</button>
 							<button type="submit">Đăng ký</button>
 						</td>
@@ -96,7 +114,7 @@
 						<td></td>
 						<td></td>
 						<td></td>
-						
+
 					</tr>
 				</table>
 			</form>
@@ -104,10 +122,13 @@
 	</main>
 	<footer>
 		<p>&copy; 2021 Bản quyền thuộc về FreeezeVn,
-			<a href="https://www.facebook.com/">Facebook</a>
-			<a href="https://www.twttier.com">twttier</a> <a href="https://www.pinterest.com">pinterest</a> <a
-				href="trangchu.html">Về Đầu Trang</a>
+			<a href="https://www.facebook.com/"><i class="bi bi-facebook"></i></a>
+			<a href="https://www.twttier.com"><i class="bi bi-twitter"></i>
+			</a> <a href="https://www.pinterest.com"><i class="bi bi-pinterest"></i></a>
 		</p>
+		<a class="fixed-top" href="#header">
+			<img src="../asset/images/top.png" alt="Top">
+		</a>
 	</footer>
 </body>
 
