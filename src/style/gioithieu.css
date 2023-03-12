@@ -1,0 +1,26 @@
+.introduce {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  display: flex;
+  align-items: start;
+}
+.introduce-left__section + .introduce-left__section {
+  margin-top: 50px;
+}
+.introduce-section__para {
+  font-size: 18px;
+  color: #333;
+  font-weight: 500;
+  line-height: 1.6;
+  text-align: justify;
+}
+.introduce-right__section {
+  padding: 20px;
+}
+.introduce-left__section-banner {
+  height: 100%;
+}
+.introduce-left__section-banner img {
+  border-radius: 8px;
+}
