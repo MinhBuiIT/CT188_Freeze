@@ -9,6 +9,7 @@
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
 
 	<link rel="stylesheet" href="./style/main.css">
+	<link rel="stylesheet" href="./style/dangki&nhap.css">
 	<title>Đăng Nhập</title>
 </head>
 
@@ -41,38 +42,34 @@
 		</nav>
 	</header>
 	<main>
-		<fieldset>
-			<legend>
-				<b>Đăng Nhập</b>
-			</legend>
+		<div class="form-container">
 			<div>
+				<h2 class="heading1">Đăng Nhập</h2>
+				<div class="line"></div>
+			</div>
+			<div class="form-container__img">
 				<img src="../asset/images/dangnhap/userlogin.png" alt="login" width="200px">
 			</div>
-			<form method="post" enctype="application/x-www-form-urlencoded">
-				<table>
+			<form method="post" enctype="application/x-www-form-urlencoded" class="form-wrap">
+				<table class="form-wrap__table">
 					<tr>
-						<th><label for="email">Email</label></th>
+						<th class="form-wrap__icon"><label for="email"><i class="bi bi-envelope"></i></label></th>
 						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td><input type="email" id="email"></td>
+						<td><input type="email" id="email" placeholder="Nhập email" class="form-wrap__input"></td>
 					</tr>
 					<tr>
-						<th><label for="password">Mật Khẩu</label></th>
+						<th class="form-wrap__icon "><label for="password"><i class="bi bi-key-fill"></i></label></th>
 						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td><input type="password" id="password"></td>
+						<td><input type="password" id="password" class="form-wrap__input" placeholder="Nhập mật khẩu"></td>
 					</tr>
 					<tr>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
+						<td colspan="3" class="form-wrap__forget">
+							Bạn quên <a href="#">Mật Khẩu</a>
+							<input type="checkbox" id="checkbox-memory"> <label for="checkbox-memory">Ghi nhớ cho lần đăng nhập
+								sau</label>
+						</td>
+					</tr>
+					<tr>
 						<td></td>
 						<td></td>
 						<td>
@@ -82,11 +79,8 @@
 					</tr>
 				</table>
 			</form>
-			<div>
-				Bạn quên <a href="#">Mật Khẩu</a>
-				<input type="checkbox"> Ghi nhớ cho lần đăng nhập sau
-			</div>
-		</fieldset>
+
+		</div>
 	</main>
 	<footer>
 		<p>&copy; 2021 Bản quyền thuộc về FreeezeVn,
