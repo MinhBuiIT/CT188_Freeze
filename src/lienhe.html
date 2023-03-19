@@ -24,7 +24,7 @@
         <nav>
             <div class="nav-links">
                 <a class="nav-links__item" href="trangchu.html">Trang chủ</a>
-                <a class="nav-links__item" href="trangchu.html">Giới thiệu</a>
+                <a class="nav-links__item" href="gioithieu.html">Giới thiệu</a>
                 <a class="nav-links__item" href="sanpham.html">Sản phẩm</a>
                 <a class="nav-links__item" href="tintuc.html">Tin tức</a>
                 <a class="nav-links__item" href="dangnhap.html">Đăng Nhập</a>
@@ -32,8 +32,8 @@
                 <a class="nav-links__item" href="lienhe.html">Liên Hệ</a>
             </div>
             <div class="nav-search">
-                <form class="nav-search__form">
-                    <input type="text" placeholder="Search">
+                <form class="nav-search__form" method="get" action="timkiem.html">
+                    <input type="text" placeholder="Search" class="nav-search__form-input">
                     <button class="button-icon button-icon--white"><i class="bi bi-search"></i></button>
                 </form>
                 <button class="button-icon button-icon--pink"><i class="bi bi-cart-fill"></i></button>
@@ -56,20 +56,23 @@
             <div class="line"></div>
             <form method="POST" enctype="application/x-www-form-urlencoded" class="contact-form">
                 <table class="contact-form__wrap">
-                    <tr class="contact-form__wrap-row">
+                    <tr class="contact-form__wrap-row form-group">
                         <td class="contact-form__wrap-infor"><label for="fullname"><i class="bi bi-person"></i></label>
                         </td>
-                        <td><input type="text" id="fullname" placeholder="Vui lòng nhập họ tên của bạn"></td>
-
-                    </tr>
-                    <tr class="contact-form__wrap-row">
-                        <td class="contact-form__wrap-infor"><label for="fullname"><i
-                                    class="bi bi-envelope"></i></label>
+                        <td><input type="text" id="fullname" name="fullname" placeholder="Vui lòng nhập họ tên của bạn">
+                            <div class="form-error"></div>
                         </td>
 
-                        <td><input type="email" id="fullname" placeholder="Vui lòng nhập email của bạn"></td>
                     </tr>
-                    <tr class="contact-form__wrap-row">
+                    <tr class="contact-form__wrap-row form-group">
+                        <td class="contact-form__wrap-infor"><label for="email"><i class="bi bi-envelope"></i></label>
+                        </td>
+
+                        <td><input type="email" id="email" name="email" placeholder="Vui lòng nhập email của bạn">
+                            <div class="form-error"></div>
+                        </td>
+                    </tr>
+                    <tr class="contact-form__wrap-row form-group">
                         <td class="contact-form__wrap-infor"><label for="fullname"><i
                                     class="bi bi-list-task"></i></label>
                         </td>
@@ -82,12 +85,14 @@
                             </select>
                         </td>
                     </tr>
-                    <tr class="contact-form__wrap-row">
+                    <tr class="contact-form__wrap-row form-group">
                         <td class="contact-form__wrap-infor"><label for="fullname"><i
                                     class="bi bi-card-text"></i></label>
                         </td>
-                        <td><textarea id="feedback_text" cols="50" rows="10"
-                                placeholder="Nội dung cần liên hệ"></textarea></td>
+                        <td><textarea id="feedback_text" cols="50" rows="10" placeholder="Nội dung cần liên hệ"
+                                name="feedback_text"></textarea>
+                            <div class="form-error"></div>
+                        </td>
                     </tr>
                     <tr>
                         <td><button type="submit">Gửi</button></td>
@@ -106,6 +111,22 @@
             <img src="../asset/images/top.png" alt="Top">
         </a>
     </footer>
+    <script src="./js/main.js"></script>
+    <script src="./js/Validator.js"></script>
+    <script>
+        Validator({
+            selector: '.contact-form',
+            errorSelector: '.form-error',
+            rules: [
+                Validator.minLength('#fullname', 4),
+                Validator.minLength('#feedback_text', 8),
+                Validator.isEmail('#email', 8),
+            ],
+            submit: (data) => {
+                alert(JSON.stringify(data))
+            }
+        })
+    </script>
 </body>
 
 </html>

@@ -20,6 +20,7 @@
 .home-article__des-text {
   line-height: 1.6;
   font-size: 18px;
+  font-weight: 500;
 }
 .home-article__des--reverse .home-article__des-graphic {
   width: 100%;

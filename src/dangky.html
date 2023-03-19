@@ -25,7 +25,7 @@
 		<nav>
 			<div class="nav-links">
 				<a class="nav-links__item" href="trangchu.html">Trang chủ</a>
-				<a class="nav-links__item" href="trangchu.html">Giới thiệu</a>
+				<a class="nav-links__item" href="gioithieu.html">Giới thiệu</a>
 				<a class="nav-links__item" href="sanpham.html">Sản phẩm</a>
 				<a class="nav-links__item" href="tintuc.html">Tin tức</a>
 				<a class="nav-links__item" href="dangnhap.html">Đăng Nhập</a>
@@ -33,8 +33,8 @@
 				<a class="nav-links__item" href="lienhe.html">Liên Hệ</a>
 			</div>
 			<div class="nav-search">
-				<form class="nav-search__form">
-					<input type="text" placeholder="Search">
+				<form class="nav-search__form" method="get" action="timkiem.html">
+					<input type="text" placeholder="Search" class="nav-search__form-input">
 					<button class="button-icon button-icon--white"><i class="bi bi-search"></i></button>
 				</form>
 				<button class="button-icon button-icon--pink"><i class="bi bi-cart-fill"></i></button>
@@ -47,38 +47,49 @@
 				<h2 class="heading1">Đăng Ký</h2>
 				<div class="line"></div>
 			</div>
-			<form method="post" enctype="application/x-www-form-urlencoded" class="form-wrap">
+			<form class="form-wrap" method="post" enctype="application/x-www-form-urlencoded">
 				<table>
-					<tr>
+					<tr class="form-group">
 						<th class="form-wrap__icon"><label for="email"><i class="bi bi-envelope"></i></label></th>
-						<td><input type="email" id="email" placeholder="Vui lòng nhập Email" class="form-wrap__input"></td>
+						<td><input type="email" id="email" name="email" placeholder="Vui lòng nhập Email"
+								class="form-wrap__input">
+							<div class="form-error"></div>
+						</td>
 					</tr>
-					<tr>
+					<tr class="form-group">
 						<th class="form-wrap__icon"><label for="password"><i class="bi bi-key-fill"></i></label></th>
-						<td><input type="password" id="password" placeholder="Vui lòng nhập mật khẩu" class="form-wrap__input"></td>
+						<td><input type="password" id="password" name="password" placeholder="Vui lòng nhập mật khẩu"
+								class="form-wrap__input" ref="#confirm_password">
+							<div class="form-error"></div>
+						</td>
 					</tr>
-					<tr>
-						<th class="form-wrap__icon"><label for="confirm_password"><i class="bi bi-key-fill"></i></label></th>
-						<td><input type="password" id="confirm_password" placeholder="Vui lòng nhập lại mật khẩu"
-								class="form-wrap__input"></td>
+					<tr class="form-group">
+						<th class="form-wrap__icon"><label for="confirm_password"><i class="bi bi-key-fill"></i></label>
+						</th>
+						<td><input type="password" id="confirm_password" name="confirm_password"
+								placeholder="Vui lòng nhập lại mật khẩu" class="form-wrap__input">
+							<div class="form-error"></div>
+						</td>
 					</tr>
-					<tr>
+					<tr class="form-group">
 						<th class="form-wrap__icon"><label><i class="bi bi-people-fill"></i></label></th>
 						<td>
-							<input type="radio" name="level" id="Bac" value="Bạc"> <label for="Bac"><span>Bạc</span></label>
-							<input type="radio" name="level" id="Vang" value="Vàng"> <label for="Vang"><span>Vàng</span></label>
+							<input type="radio" name="level" id="Bac" value="Bạc"> <label
+								for="Bac"><span>Bạc</span></label>
+							<input type="radio" name="level" id="Vang" value="Vàng"> <label
+								for="Vang"><span>Vàng</span></label>
 							<input type="radio" name="level" id="BK" value="Bạch Kim"> <label for="BK"><span>Bạch
 									Kim</span></label>
 						</td>
 					</tr>
-					<tr>
-						<th class="form-wrap__icon"><label for="file_avt"><i class="bi bi-person-badge-fill"></i></label></th>
-						<td><input type="file" id="file_avt"></td>
+					<tr class="form-group">
+						<th class="form-wrap__icon"><label for="file_avt"><i
+									class="bi bi-person-badge-fill"></i></label></th>
+						<td><input type="file" id="file_avt" name="file_avt"></td>
 					</tr>
-					<tr>
-						<td colspan="2" class="form-wrap__policy"><b>Thông qua việc tạo tài khoản, bạn đồng ý với <a href="#">Điều
-									khoản & Quyền
-									riêng tư của chúng tôi</a></b></td>
+					<tr class="form-group">
+						<td colspan="2" class="form-wrap__policy"><b>Thông qua việc tạo tài khoản, bạn đồng ý với <a
+									href="#">Điều khoản & Quyền riêng tư của chúng tôi</a></b></td>
 					</tr>
 					<tr>
 						<td colspan="2">
@@ -100,6 +111,25 @@
 			<img src="../asset/images/top.png" alt="Top">
 		</a>
 	</footer>
+	<script src="./js/main.js"></script>
+	<script src="./js/Validator.js"></script>
+	<script>
+		Validator({
+			selector: '.form-wrap',
+			errorSelector: '.form-error',
+			rules: [
+				Validator.isEmail('#email'),
+				Validator.minLength('#password', 8),
+				Validator.confirmSelector('#confirm_password', function () {
+					let form = document.querySelector('.form-wrap')
+					return form.querySelector('#password')
+				})
+			],
+			submit: (data) => {
+				alert(JSON.stringify(data));
+			}
+		});
+	</script>
 </body>
 
 </html>

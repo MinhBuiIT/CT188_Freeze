@@ -25,7 +25,7 @@
 		<nav>
 			<div class="nav-links">
 				<a class="nav-links__item" href="trangchu.html">Trang chủ</a>
-				<a class="nav-links__item" href="trangchu.html">Giới thiệu</a>
+				<a class="nav-links__item" href="gioithieu.html">Giới thiệu</a>
 				<a class="nav-links__item" href="sanpham.html">Sản phẩm</a>
 				<a class="nav-links__item" href="tintuc.html">Tin tức</a>
 				<a class="nav-links__item" href="dangnhap.html">Đăng Nhập</a>
@@ -50,23 +50,30 @@
 			<div class="form-container__img">
 				<img src="../asset/images/dangnhap/userlogin.png" alt="login" width="200px">
 			</div>
-			<form method="post" enctype="application/x-www-form-urlencoded" class="form-wrap">
+			<form class="form-wrap">
 				<table class="form-wrap__table">
-					<tr>
+					<tr class="form-group">
 						<th class="form-wrap__icon"><label for="email"><i class="bi bi-envelope"></i></label></th>
 						<td></td>
-						<td><input type="email" id="email" placeholder="Nhập email" class="form-wrap__input"></td>
+						<td><input type="text" id="email" name="email" placeholder="Nhập email"
+								class="form-wrap__input">
+							<div class="form-error"></div>
+						</td>
 					</tr>
-					<tr>
+					<tr class="form-group">
 						<th class="form-wrap__icon "><label for="password"><i class="bi bi-key-fill"></i></label></th>
 						<td></td>
-						<td><input type="password" id="password" class="form-wrap__input" placeholder="Nhập mật khẩu"></td>
+						<td><input type="password" id="password" name="password" class="form-wrap__input"
+								placeholder="Nhập mật khẩu">
+							<div class="form-error"></div>
+						</td>
 					</tr>
-					<tr>
+					<tr class="form-group">
 						<td colspan="3" class="form-wrap__forget">
 							Bạn quên <a href="#">Mật Khẩu</a>
-							<input type="checkbox" id="checkbox-memory"> <label for="checkbox-memory">Ghi nhớ cho lần đăng nhập
-								sau</label>
+							<input type="checkbox" id="checkbox-memory" name="memory" value="true"> <label
+								for="checkbox-memory">Ghi nhớ cho lần
+								đăng nhập sau</label>
 						</td>
 					</tr>
 					<tr>
@@ -92,6 +99,21 @@
 			<img src="../asset/images/top.png" alt="Top">
 		</a>
 	</footer>
+	<script src="./js/main.js"></script>
+	<script src="./js/Validator.js"></script>
+	<script>
+		Validator({
+			selector: '.form-wrap',
+			errorSelector: '.form-error',
+			rules: [
+				Validator.minLength('#password', 8),
+				Validator.isEmail('#email')
+			],
+			submit: (data) => {
+				alert(JSON.stringify(data))
+			}
+		});
+	</script>
 </body>
 
 </html>

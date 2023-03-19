@@ -7,8 +7,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon" href="../asset/images/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="./style/sanpham.css">
   <link rel="stylesheet" href="./style/main.css">
+  <link rel="stylesheet" href="./style/sanpham.css">
   <title>San Pham</title>
 </head>
 
@@ -23,7 +23,7 @@
     <nav>
       <div class="nav-links">
         <a class="nav-links__item" href="trangchu.html">Trang chủ</a>
-        <a class="nav-links__item" href="trangchu.html">Giới thiệu</a>
+        <a class="nav-links__item" href="gioithieu.html">Giới thiệu</a>
         <a class="nav-links__item" href="sanpham.html">Sản phẩm</a>
         <a class="nav-links__item" href="tintuc.html">Tin tức</a>
         <a class="nav-links__item" href="dangnhap.html">Đăng Nhập</a>
@@ -31,8 +31,8 @@
         <a class="nav-links__item" href="lienhe.html">Liên Hệ</a>
       </div>
       <div class="nav-search">
-        <form class="nav-search__form">
-          <input type="text" placeholder="Search">
+        <form class="nav-search__form" method="get" action="timkiem.html">
+          <input type="text" placeholder="Search" class="nav-search__form-input">
           <button class="button-icon button-icon--white"><i class="bi bi-search"></i></button>
         </form>
         <button class="button-icon button-icon--pink"><i class="bi bi-cart-fill"></i></button>
@@ -44,7 +44,7 @@
       <h1 class="heading1">Sản phẩm truyền thống</h1>
       <div class="line"></div>
       <div class="product-wrap">
-        <div class="product-item">
+        <div class="product-item" data-productId="sp001">
           <div class="product-item__img">
             <img src="../asset/images/sanpham/kiwi.jpg" alt="Product">
           </div>
@@ -57,11 +57,11 @@
           </div>
           <div class="product-item__order">
             <label for="order1">Số lượng</label>
-            <input type="number" min="0" max="100" value="0" size="3" id="order1" required>
-            <button>Đặt hàng</button>
+            <input type="number" min="0" max="100" value="0" size="3" required>
+            <button class="btn-order">Đặt hàng</button>
           </div>
         </div>
-        <div class="product-item">
+        <div class="product-item" data-productId="sp002">
           <div class="product-item__img">
             <img src="../asset/images/sanpham/mango.jpg" alt="Product">
           </div>
@@ -73,11 +73,11 @@
           </div>
           <div class="product-item__order">
             <label for="order2">Số lượng</label>
-            <input type="number" min="0" max="100" value="0" size="3" id="order2" required>
-            <button>Đặt hàng</button>
+            <input type="number" min="0" max="100" value="0" size="3" required>
+            <button class="btn-order">Đặt hàng</button>
           </div>
         </div>
-        <div class="product-item">
+        <div class="product-item" data-productId="sp003">
           <div class="product-item__img">
             <img src="../asset/images/sanpham/cantaloupe.jpg" alt="Product">
           </div>
@@ -89,8 +89,8 @@
           </div>
           <div class="product-item__order">
             <label for="order1">Số lượng</label>
-            <input type="number" min="0" max="100" value="0" size="3" id="order1" required>
-            <button>Đặt hàng</button>
+            <input type="number" min="0" max="100" value="0" size="3" required>
+            <button class="btn-order">Đặt hàng</button>
           </div>
         </div>
       </div>
@@ -99,7 +99,7 @@
       <h1 class="heading1">Sản phẩm mới</h1>
       <div class="line"></div>
       <div class="product-wrap">
-        <div class="product-item">
+        <div class="product-item" data-productId="sp004">
           <div class="product-item__img">
             <img src="../asset/images/sanpham/strawberry.jpg" alt="Product">
           </div>
@@ -111,11 +111,11 @@
           </div>
           <div class="product-item__order">
             <label for="order1">Số lượng</label>
-            <input type="number" min="0" max="100" value="0" size="3" id="order1" required>
-            <button>Đặt hàng</button>
+            <input type="number" min="0" max="100" value="0" size="3" required>
+            <button class="btn-order">Đặt hàng</button>
           </div>
         </div>
-        <div class="product-item">
+        <div class="product-item" data-productId="sp005">
           <div class="product-item__img">
             <img src="../asset/images/sanpham/blackberry.jpg" alt="Product">
           </div>
@@ -127,11 +127,11 @@
           </div>
           <div class="product-item__order">
             <label for="order2">Số lượng</label>
-            <input type="number" min="0" max="100" value="0" size="3" id="order2" required>
-            <button>Đặt hàng</button>
+            <input type="number" min="0" max="100" value="0" size="3" required>
+            <button class="btn-order">Đặt hàng</button>
           </div>
         </div>
-        <div class="product-item">
+        <div class="product-item" data-productId="sp006">
           <div class="product-item__img">
             <img src="../asset/images/sanpham/blueberry.jpg" alt="Product">
           </div>
@@ -143,8 +143,8 @@
           </div>
           <div class="product-item__order">
             <label for="order2">Số lượng</label>
-            <input type="number" min="0" max="100" value="0" size="3" id="order2" required>
-            <button>Đặt hàng</button>
+            <input type="number" min="0" max="100" value="0" size="3" required>
+            <button class="btn-order">Đặt hàng</button>
           </div>
         </div>
       </div>
@@ -153,7 +153,7 @@
       <h1 class="heading1">Sản phẩm trái cây</h1>
       <div class="line"></div>
       <div class="product-wrap">
-        <div class="product-item">
+        <div class="product-item" data-productId="sp007">
           <div class="product-item__img">
             <img src="../asset/images/sanpham/grapes.jpg" alt="Product">
           </div>
@@ -163,13 +163,13 @@
               Pomelo, tuy nhiên nhiều từ điển ở Việt Nam lại dịch thành grapefruit</span>
             <a href="#">Xem chi tiết</a>
           </div>
-          <div class="product-item__order">\
+          <div class="product-item__order">
             <label for="order1">Số lượng</label>
-            <input type="number" min="0" max="100" value="0" size="3" id="order1" required>
-            <button>Đặt hàng</button>
+            <input type="number" min="0" max="100" value="0" size="3" required>
+            <button class="btn-order">Đặt hàng</button>
           </div>
         </div>
-        <div class="product-item">
+        <div class="product-item" data-productId="sp008">
           <div class="product-item__img">
             <img src="../asset/images/sanpham/green-apple.jpg" alt="Product">
           </div>
@@ -181,11 +181,11 @@
           </div>
           <div class="product-item__order">
             <label for="order2">Số lượng</label>
-            <input type="number" min="0" max="100" value="0" size="3" id="order2" required>
-            <button>Đặt hàng</button>
+            <input type="number" min="0" max="100" value="0" size="3" required>
+            <button class="btn-order">Đặt hàng</button>
           </div>
         </div>
-        <div class="product-item">
+        <div class="product-item" data-productId="sp009">
           <div class="product-item__img">
             <img src="../asset/images/sanpham/pineapple.jpg" alt="Product">
           </div>
@@ -197,8 +197,8 @@
           </div>
           <div class="product-item__order">
             <label for="order2">Số lượng</label>
-            <input type="number" min="0" max="100" value="0" size="3" id="order2" required>
-            <button>Đặt hàng</button>
+            <input type="number" min="0" max="100" value="0" size="3" required>
+            <button class="btn-order">Đặt hàng</button>
           </div>
         </div>
       </div>
@@ -219,6 +219,7 @@
       <img src="../asset/images/top.png" alt="Top">
     </a>
   </footer>
+  <script src="./js/main.js"></script>
 </body>
 
 </html>

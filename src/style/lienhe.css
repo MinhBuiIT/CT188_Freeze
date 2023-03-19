@@ -38,7 +38,7 @@
 }
 .contact-form__wrap-row {
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   gap: 14px;
   margin-top: 4px;
 }
