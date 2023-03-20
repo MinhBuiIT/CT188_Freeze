@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../asset/images/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="./style/main.css">
+    <link rel="stylesheet" href="./style/donhang.css">
+    <title>Đơn hàng</title>
+</head>
+
+<body>
+    <header id="header">
+        <a href="trangchu.html">
+            <img src="../asset/images/logo.png" alt="Logo">
+        </a>
+        <img src="../asset/images/header-img1.png" alt="Header" class="header-img1">
+        <img src="../asset/images/header-img2.png" alt="Header" class="header-img2">
+        <img src="../asset/images/header-img3.png" alt="Header" class="header-img3">
+        <nav>
+            <div class="nav-links">
+                <a class="nav-links__item" href="trangchu.html">Trang chủ</a>
+                <a class="nav-links__item" href="gioithieu.html">Giới thiệu</a>
+                <a class="nav-links__item" href="sanpham.html">Sản phẩm</a>
+                <a class="nav-links__item" href="tintuc.html">Tin tức</a>
+                <a class="nav-links__item" href="dangnhap.html">Đăng Nhập</a>
+                <a class="nav-links__item" href="dangky.html">Đăng ký</a>
+                <a class="nav-links__item" href="lienhe.html">Liên Hệ</a>
+            </div>
+            <div class="nav-search">
+                <form class="nav-search__form" method="get" action="timkiem.html">
+                    <input type="text" placeholder="Search" class="nav-search__form-input">
+                    <button class="button-icon button-icon--white"><i class="bi bi-search"></i></button>
+                </form>
+                <button class="button-icon button-icon--pink button-order"><i class="bi bi-cart-fill"></i></button>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div>
+            <h2 class="heading1">Chi tiết đơn hàng</h2>
+            <div class="line"></div>
+        </div>
+        <table>
+            <thead>
+                <th>Hình SP</th>
+                <th colspan="2">Tên SP</th>
+                <th>Số lượng</th>
+                <th>Giá</th>
+                <th>Thành Tiền</th>
+                <th></th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="table-order-img">
+                        <img src="../asset/images/sanpham/kiwi.jpg" alt="SP" width="100px">
+                    </td>
+                    <td colspan="2">Sữa chua vị dưa lưới</td>
+                    <td class="table-right">4</td>
+                    <td class="table-right">23.000 đ</td>
+                    <td class="table-right">92.000 Đ</td>
+                    <td class="table-icon">
+                        <div><i class="bi bi-trash3-fill"></i></div>
+                    </td>
+                </tr>
+            </tbody>
+            <tfoot class="table-foot">
+                <tr>
+                    <td colspan="7">Tổng thành tiền (A) = 264.000đ</td>
+                </tr>
+                <tr>
+                    <td colspan="7">Chiết Khấu (B) = 0.1 x A = 26.400đ</td>
+                </tr>
+                <tr>
+                    <td colspan="7">Thuế (C) = 10% x (A-B) = 23.760đ</td>
+                </tr>
+                <tr>
+                    <td colspan="7">Tổng đơn hàng = A - B + C = 261.360đ</td>
+                </tr>
+                <tr>
+                    <td colspan="7" class="row-center">
+                        <button>Xác nhận đơn hàng</button>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+    </main>
+    <footer>
+        <p>&copy; 2021 Bản quyền thuộc về FreeezeVn,
+            <a href="https://www.facebook.com/"><i class="bi bi-facebook"></i></a>
+            <a href="https://www.twttier.com"><i class="bi bi-twitter"></i>
+            </a> <a href="https://www.pinterest.com"><i class="bi bi-pinterest"></i></a>
+        </p>
+        <a class="fixed-top" href="#header">
+            <img src="../asset/images/top.png" alt="Top">
+        </a>
+    </footer>
+    <script src="./js/main.js"></script>
+</body>
+
+</html>

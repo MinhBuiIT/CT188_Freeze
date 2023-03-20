@@ -1,0 +1,37 @@
+table,
+th,
+td {
+  border: 1px solid #333;
+  font-size: 18px;
+  color: #333;
+}
+.table-right {
+  text-align: right;
+}
+.table-order-img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.table-order-img {
+  object-fit: cover;
+}
+.table-icon div {
+  margin: 0 auto;
+  width: 30px;
+  height: 30px;
+  background-color: #cddc39;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.table-icon div i {
+  color: #ed4190;
+}
+.table-foot {
+  text-align: right;
+}
+.row-center {
+  text-align: center;
+}
