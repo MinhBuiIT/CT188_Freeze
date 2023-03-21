@@ -44,7 +44,7 @@
             <h2 class="heading1">Chi tiết đơn hàng</h2>
             <div class="line"></div>
         </div>
-        <table>
+        <table id="cart-detail">
             <thead>
                 <th>Hình SP</th>
                 <th colspan="2">Tên SP</th>
@@ -54,7 +54,7 @@
                 <th></th>
             </thead>
             <tbody>
-                <tr>
+                <!-- <tr>
                     <td class="table-order-img">
                         <img src="../asset/images/sanpham/kiwi.jpg" alt="SP" width="100px">
                     </td>
@@ -65,20 +65,20 @@
                     <td class="table-icon">
                         <div><i class="bi bi-trash3-fill"></i></div>
                     </td>
-                </tr>
+                </tr> -->
             </tbody>
             <tfoot class="table-foot">
-                <tr>
-                    <td colspan="7">Tổng thành tiền (A) = 264.000đ</td>
+                <tr class="table-foot__total">
+                    <td colspan="7">Tổng thành tiền (A) = 0đ</td>
                 </tr>
-                <tr>
-                    <td colspan="7">Chiết Khấu (B) = 0.1 x A = 26.400đ</td>
+                <tr class="table-foot__discount">
+                    <td colspan="7">Chiết Khấu (B) = 0.1 x A = 0đ</td>
                 </tr>
-                <tr>
-                    <td colspan="7">Thuế (C) = 10% x (A-B) = 23.760đ</td>
+                <tr class="table-foot__tax">
+                    <td colspan="7">Thuế (C) = 10% x (A-B) = 0đ</td>
                 </tr>
-                <tr>
-                    <td colspan="7">Tổng đơn hàng = A - B + C = 261.360đ</td>
+                <tr class="table-foot__sum">
+                    <td colspan="7">Tổng đơn hàng = A - B + C = 0đ</td>
                 </tr>
                 <tr>
                     <td colspan="7" class="row-center">
