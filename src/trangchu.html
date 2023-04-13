@@ -32,16 +32,28 @@
       </div>
       <div class="nav-search">
         <form class="nav-search__form" method="GET" action="timkiem.html">
-          <input type="text" placeholder="Search" class="nav-search__form-input">
-          <button class="button-icon button-icon--white"><i class="bi bi-search"></i></button>
+          <input type="text" placeholder="Search" class="nav-search__form-input" name="search"
+            onkeyup="checkKeyUp(event)">
+          <button class="button-icon button-icon--white" onclick="doSearch()"><i class="bi bi-search"></i></button>
         </form>
         <button class="button-icon button-icon--pink button-order"><i class="bi bi-cart-fill"></i></button>
       </div>
     </nav>
   </header>
-  <main class="one-col">
-    <aside class="home-banner aside-left">
-      <img src="../asset/images/trangchu/bg-home.jpg" alt="Home-Img">
+  <main id="main" class="one-col">
+    <aside class="home-banner aside-left" id="headline">
+      <!-- <div class="headline-wrap">
+        <img src="../asset/images/trangchu/headline/headline1.jpg" alt="Headline">
+        <span>Bánh flan sữa chua - sự kết hợp hoàn hảo</span>
+      </div>
+      <div class="headline-wrap">
+        <img src="../asset/images/trangchu/headline/headline2.jpg" alt="Headline">
+        <span>Bánh flan sữa chua - sự kết hợp hoàn hảo</span>
+      </div>
+      <div class="headline-wrap">
+        <img src="../asset/images/trangchu/headline/headline3.jpg" alt="Headline">
+        <span>Bánh flan sữa chua - sự kết hợp hoàn hảo</span>
+      </div> -->
     </aside>
     <article>
       <div class="home-article">
@@ -152,6 +164,7 @@
       <img src="../asset/images/top.png" alt="Top">
     </a>
   </footer>
+  <script src="./jquery/jquery-3.6.4.js"></script>
   <script src="./js/main.js"></script>
 
 </body>

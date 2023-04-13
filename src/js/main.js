@@ -1,17 +1,35 @@
-//Search Product
 const formSearch = document.querySelector('.nav-search__form');
-if (formSearch) {
-  formSearch.onsubmit = (e) => {
-    const inputSearch = formSearch.querySelector('.nav-search__form-input');
-    e.preventDefault();
-    let valueSearch = inputSearch.value;
-    if (valueSearch.length > 0) {
-      let url = `timkiem.html?query=${encodeURIComponent(valueSearch)}`;
-      window.location.href = url;
-      inputSearch.value = '';
-    }
-  };
+function checkKeyUp(event) {
+  if (event.keyCode === 13) {
+    doSearch();
+  }
 }
+function doSearch() {
+  if (formSearch.querySelector('input').value > 0) {
+    formSearch.submit();
+  }
+}
+function showSearch() {
+  let url = new URL(window.location);
+  let wordSearch = url.searchParams.values();
+  let word = [...wordSearch][0];
+  let p = document.createElement('p');
+  p.textContent = `Từ khóa tìm kiếm là: ${word}`;
+  document.querySelector('.search-word').append(p);
+}
+//Search Product
+// if (formSearch) {
+//   formSearch.onsubmit = (e) => {
+//     const inputSearch = formSearch.querySelector('.nav-search__form-input');
+//     e.preventDefault();
+//     let valueSearch = inputSearch.value;
+//     if (valueSearch.length > 0) {
+//       let url = `timkiem.html?query=${encodeURIComponent(valueSearch)}`;
+//       window.location.href = url;
+//       inputSearch.value = '';
+//     }
+//   };
+// }
 // Cart Product
 var itemList = {
   sp001: { name: 'Sữa Chua Vị Kiwi', price: 21000, photo: '../asset/images/sanpham/kiwi.jpg' },
@@ -147,3 +165,70 @@ window.onstorage = () => {
   showCart();
 };
 showCart();
+// Quảng cáo
+var d = new Date();
+var ads =
+  'Khách hàng có ngày sinh trong tháng ' +
+  d.getMonth() +
+  ' sẽ được tặng 2 phần sữa chua dâu cho đơn hàng đầu tiên trong tháng.';
+$('footer').append("<div id='adscontainer'><span id='adstext'><h2>" + ads + '</h2></span></div>');
+let W = (window.innerWidth - $('#main').width()) / 2;
+
+function adsHorEffect() {
+  $('#adscontainer').addClass('adshorcontainer container adsleftcontainer');
+  let { top, left } = $('#main').position();
+  $('#adscontainer').css({ left: `${left}px`, width: `${$('#main').width()}px` });
+  $('#adstext').addClass('adshortext adstext');
+  $('#adstext').css({ left: `${$('#adscontainer').width()}px` });
+  let leftAnimate = $('#adscontainer').width() + $('#adstext').width();
+  $('#adstext').animate({ left: `-=${leftAnimate}px` }, 30000, adsHorEffect);
+}
+function adsVerEffect() {
+  $('#adscontainer').addClass('adsvercontainer container adstopcontainer');
+  $('#adscontainer').css({ width: `${W}px` });
+  $('#adstext').addClass('adsvertext adstext');
+  $('#adstext').css({ top: `${$('#adscontainer').height()}px` });
+  let topAnimate = $('#adscontainer').height() + $('#adstext').height();
+  $('#adstext').animate({ top: `-=${topAnimate}px` }, 30000, adsVerEffect);
+}
+function checkWidthPage() {
+  if (W < 80) return;
+  if (W > 200) adsHorEffect();
+  else adsVerEffect();
+}
+checkWidthPage();
+//banner headline
+const headlineContent = [
+  { title: 'Bánh flan sữa chua - sự kết hợp hoàn hảo', photo: '../asset/images/trangchu/headline/headline1.jpg' },
+  {
+    title: 'Sữa chua làm từ sữa dê - đậm đà hương vị khó quên',
+    photo: '../asset/images/trangchu/headline/headline2.jpg'
+  },
+  { title: 'Thưởng thức sữa chua theo cách của bạn', photo: '../asset/images/trangchu/headline/headline3.jpg' }
+];
+
+$('document').ready(function () {
+  let counter = 0;
+  function hanldeSlideHeadline() {
+    let html = headlineContent
+      .map((item, index) => {
+        return `<div class="headline-wrap" style='display: ${index === 0 ? 'block' : 'none'}'>
+      <img src=${item.photo} alt="Headline">
+      <span>${item.title}</span>
+    </div>`;
+      })
+      .join('');
+    $('#headline').append(html);
+  }
+  hanldeSlideHeadline();
+  let timer;
+  setInterval(function () {
+    if (timer) clearTimeout(timer);
+    $($('#headline').children()[counter]).fadeOut(1000);
+    counter++;
+    if (counter >= headlineContent.length) counter = 0;
+    timer = setTimeout(() => {
+      $($('#headline').children()[counter]).fadeIn(1000);
+    }, 1000);
+  }, 7000);
+});
